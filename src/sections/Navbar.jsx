@@ -5,7 +5,7 @@ import { navLinks } from '../constants/index.js';
 const NavItems = ({ onClick = () => {} }) => (
   <ul className="nav-ul">
     {navLinks.map((item) => (
-      <li key={item.id} className="nav-li">
+      <li key={item.id} className="nav-li hover:text-blue-400">
         <a href={item.href} className="nav-li_a" onClick={onClick}>
           {item.name}
         </a>
@@ -21,16 +21,16 @@ const Navbar = () => {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/90">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#000000e8]">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center py-5 mx-auto c-space">
-          <a href="/" className="text-neutral-400 font-bold text-xl hover:text-white transition-colors">
+          <a href="/" className="text-neutral-400 font-bold text-3xl hover:text-blue-400 transition-colors uppercase">
             Joy's Protfolio
           </a>
 
           <button
             onClick={toggleMenu}
-            className="text-neutral-400 hover:text-white focus:outline-none sm:hidden flex"
+            className="text-neutral-400 hover:text-blue-400 focus:outline-none sm:hidden flex"
             aria-label="Toggle menu">
             <img src={isOpen ? 'assets/close.svg' : 'assets/menu.svg'} alt="toggle" className="w-6 h-6" />
           </button>
